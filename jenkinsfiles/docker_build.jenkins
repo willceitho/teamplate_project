@@ -30,13 +30,13 @@ pipeline {
                 }
             }
         }
-        // stage("docker push") {
-        //     steps {
-        //         echo " ============== start pushing image =================="
-        //         sh '''
-        //         docker push voopnok/toolbox:latest
-        //         '''
-        //     }
-        // }
+        stage("docker push") {
+            steps {
+                echo " ============== start pushing image =================="
+                sh '''
+                docker push voopnok/toolbox:latest
+                '''
+            }
+        }
     }
 }
