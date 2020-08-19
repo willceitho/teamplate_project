@@ -1,8 +1,7 @@
 - name: Config workers
-  hosts: ctrl_host
+  hosts: workers
   # vars_files:
   #   - vars/workers.yml
   roles:
     - copy_linux_env_vars
-    - make_smth
-    - geerlingguy.nginx
+    - deploy_app
