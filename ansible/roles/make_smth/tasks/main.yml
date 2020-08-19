@@ -1,0 +1,4 @@
+---
+
+- name: asd
+  shell: echo 'test' && id
