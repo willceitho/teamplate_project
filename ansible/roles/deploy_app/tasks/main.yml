@@ -1,11 +1,7 @@
 ---
 - name: add index.html
-  shell: echo 'test my new deploy' >> /var/www/html/index.html
+  shell: echo 'build num is ' $BUILD_ID > /var/www/html/index.html
   register: congr
-
-- name: print var
-  debug:
-    var: congr
 
 - name: restart nginx
   service:
