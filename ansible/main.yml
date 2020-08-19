@@ -5,3 +5,4 @@
   roles:
     - copy_linux_env_vars
     - make_smth
+    - geerlingguy.nginx
