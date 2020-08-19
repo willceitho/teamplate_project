@@ -1,9 +1,13 @@
 ---
-
-- name: asd
-  shell: echo 'test' && id
+- name: add index.html
+  shell: echo 'test' >> /var/www/index.html
   register: congr
 
 - name: print var
   debug:
     var: congr
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: reloaded
