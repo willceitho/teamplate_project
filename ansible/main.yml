@@ -1,5 +1,5 @@
 - name: Config workers
-  hosts: workers
+  hosts: ctrl_host
   # vars_files:
   #   - vars/workers.yml
   roles:

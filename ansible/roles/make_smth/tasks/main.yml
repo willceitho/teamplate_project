@@ -1,6 +1,6 @@
 ---
 - name: add index.html
-  shell: echo 'test' >> /var/www/index.html
+  shell: echo 'test' >> /var/www/html/index.html
   register: congr
 
 - name: print var
