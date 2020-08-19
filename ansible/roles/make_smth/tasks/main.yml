@@ -2,3 +2,8 @@
 
 - name: asd
   shell: echo 'test' && id
+  result: congr
+
+- name: print var
+  debug:
+    var: congr
