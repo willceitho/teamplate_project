@@ -1,0 +1,6 @@
+---
+
+- name: Copy file with vars
+  copy:
+    src: files/
+    dest:  /etc/profile.d/

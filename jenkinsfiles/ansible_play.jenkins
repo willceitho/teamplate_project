@@ -1,0 +1,32 @@
+#!groovy
+// Run docker build
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    triggers { pollSCM('* * * * *') }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Make ansible play") {
+            steps {
+                echo " ============== start ansible-playbook main.yml =================="
+                dir ('ansible') {
+                	sh 'ansible-playbook main.yml '
+                }
+            }
+        }
+        // stage("docker push") {
+        //     steps {
+        //         echo " ============== start pushing image =================="
+        //         sh '''
+        //         docker push voopnok/toolbox:latest
+        //         '''
+        //     }
+        // }
+    }
+}

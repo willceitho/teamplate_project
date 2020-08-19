@@ -1,0 +1,6 @@
+- name: Config workers
+  hosts: workers
+  # vars_files:
+  #   - vars/workers.yml
+  roles:
+    - copy_linux_env_vars
